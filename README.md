@@ -39,10 +39,20 @@ This is a premium, immersive 3D portfolio website built with React, Three.js, an
     npm install
     ```
 
-2.  **Run Locally**:
-    ```bash
-    npm run dev
-    ```
+2.  **Available Scripts**:
+    In the project directory, you can run:
+
+    *   `npm run dev`
+        Runs the app in the development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+
+    *   `npm run build`
+        Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+
+    *   `npm run lint`
+        Runs ESLint to check for code quality and syntax errors.
+
+    *   `npm run preview`
+        Locally preview the production build. Useful for verifying the build before deploying.
 
 3.  **Update Content**:
     *   Edit `src/constants/index.js` to update text, links, projects, and experience data.
