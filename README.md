@@ -1,88 +1,69 @@
-# 3D Developer Portfolio
+# Mohan P | Full Stack Developer Portfolio
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FMOHAN-MOORTHI%2FPortfolio)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Portfolio Preview](https://i.ibb.co/5c54q5H/portfolio.png)
 
-This is a premium, immersive 3D portfolio website built with React, Three.js, and Tailwind CSS. It features a modern "Cyber/Space" aesthetic with interactive 3D elements, glassmorphism UI, and smooth animations.
+A premium, immersive 3D portfolio website built with **React, Three.js, and Tailwind CSS**. This project showcases my skills, experience, and projects in a modern "Cyber/Space" aesthetic with interactive elements.
 
-## 🚀 Key Features
+## 🚀 Live Demo
+[View Live Portfolio](https://my-portfolio-theta-ten.vercel.app/) *(Replace with your actual Vercel/Render link)*
 
-*   **Immersive 3D Visuals**:
-    *   **Hero Section**: Interactive Cyber Polyhedron with wireframe overlay.
-    *   **Contact Section**: Layered Cyber Globe with atmospheric glow.
-    *   **Tech Stack**: Floating interactive icons with gradient borders.
-*   **Premium UI/UX**:
-    *   **Glassmorphism Navbar**: Dynamic backdrop blur that adapts to scrolling.
-    *   **Smart Navigation**: Active link highlighting and scroll-to-top functionality.
-    *   **Custom Cursor**: Interactive spring-animated cursor.
-    *   **Preloader**: Sleek typography reveal animation on load.
-    *   **Reading Progress**: Top progress bar indicating scroll position.
-*   **Interactivity**:
-    *   **Dynamic Logo**: The navbar logo types itself out ("MOHAN P | Portfolio") for a unique branding effect.
-    *   **Typewriter Effect**: Dynamic text typing in the hero section.
-    *   **Confetti Celebration**: fun particle explosion on successful contact form submission.
-    *   **Tilt Effects**: 3D tilt interactions on project and service cards.
-*   **Responsive**: Fully optimized for Desktop, Tablet, and Mobile devices.
+## 👨‍💻 About Me
+I am a **Full Stack Developer** specializing in **Python, Django, and React**. I architect robust solutions and craft seamless, high-performance web experiences.
+*   **Education**: MCA (Bharathiar University), B.Sc Mathematics.
+*   **Experience**: Python Full Stack Developer @ Besant Technology.
 
 ## 🛠 Tech Stack
+*   **Frontend**: React, Vite, Tailwind CSS, Framer Motion
+*   **3D Graphics**: Three.js, React Three Fiber, Maath
+*   **Backend**: Python, Django, Node.js, Express, MongoDB, SQL
+*   **Tools**: Git, GitHub, VS Code, Postman
 
-*   **Frontend**: React, Vite
-*   **Styling**: Tailwind CSS, Framer Motion
-*   **3D Graphics**: Three.js, React Three Fiber, React Three Drei
-*   **Icons**: Lucide React
-*   **Utilities**: Maath, Canvas Confetti
+## 💼 Featured Projects
 
-## ⚙️ Setup & Customization
+### 1. **Book Store**
+A full-stack bookstore application featuring a clean interface and robust backend for managing book inventories, user interactions, and sales tracking.
+*   *Tech*: React, Express, MongoDB
 
-1.  **Install Dependencies**:
+### 2. **DocSpot**
+A comprehensive Doctor Appointment Web Application offering robust healthcare management solutions including appointment scheduling and doctor profiles.
+*   *Tech*: MERN Stack (MongoDB, Express, React, Node.js)
+
+### 3. **Burger Shop**
+Developed full-stack project 'Burger Shop' using Django framework. Designed to optimize the online ordering process for a fictional burger restaurant.
+*   *Tech*: Python, Django
+
+### 4. **Employee Management System**
+Designed to streamline personnel data organization and management. Implemented functionalities for storing, editing, deleting, and adding new employee details.
+*   *Tech*: React, JavaScript, CSS
+
+## ⚙️ How to Run Locally
+
+1.  **Clone the repository**:
     ```bash
-    npm install
+    git clone https://github.com/MOHAN-MOORTHI/my-portfolio.git
+    cd my-portfolio
     ```
 
-2.  **Available Scripts**:
-    In the project directory, you can run:
+2.  **Install dependencies**:
+    ```bash
+    npm install --legacy-peer-deps
+    ```
 
-    *   `npm run dev`
-        Runs the app in the development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+3.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
 
-    *   `npm run build`
-        Builds the app for production to the `dist` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
-
-    *   `npm run lint`
-        Runs ESLint to check for code quality and syntax errors.
-
-    *   `npm run preview`
-        Locally preview the production build. Useful for verifying the build before deploying.
-
-3.  **Update Content**:
-    *   Edit `src/constants/index.js` to update text, links, projects, and experience data.
-    *   Replace `public/PHOTO.jpg` with your own profile picture.
-
-4.  **Resume/CV**:
-    *   Place your resume PDF in the `public` folder.
-    *   The current configured file is `MOHAN P_MCA 2023_RESUME.pdf`.
-    *   If you change the file, update the `handleDownloadCV` function in `src/components/Navbar.jsx`.
-
-5.  **Email Configuration**:
-    *   The contact form currently calls a `confetti` animation on success.
-    *   To integrate real email sending, we recommend using [EmailJS](https://www.emailjs.com/). Update the `handleSubmit` function in `src/components/Contact.jsx`.
-
-## 📦 Deployment
-
-This project is optimized for deployment on Vercel, Netlify, or GitHub Pages.
-
-1.  **Build**:
+4.  **Build for production**:
     ```bash
     npm run build
     ```
-2.  **Deploy**:
-    *   **Vercel/Netlify**: Connect your GitHub repo and it will auto-detect the Vite settings.
 
-## 🎨 Aesthetics
-
-*   **Primary Color**: `#915EFF` (Purple)
-*   **Background**: Dark Space Theme (`#050816`)
-*   **Gradients**: `green-pink-gradient`, `violet-gradient`
+## 📬 Contact
+*   **Email**: mohangopippt@gmail.com
+*   **Phone**: +91 6381799190
+*   **LinkedIn**: [Mohan Moorthi](https://www.linkedin.com/in/mohan-moorthi/)
+*   **GitHub**: [MOHAN-MOORTHI](https://github.com/MOHAN-MOORTHI)
 
 ---
-*Created by Antigravity*
+*Built with ❤️ by Mohan P*
