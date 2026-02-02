@@ -7,53 +7,99 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+import emailjs from "@emailjs/browser";
+
+// ... existing imports ...
+
 const Contact = () => {
-    const formRef = useRef();
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        message: "",
+  const formRef = useRef();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+
+  // REPLACE THESE WITH YOUR ACTUAL EMAILJS SERVICE ID, TEMPLATE ID, AND PUBLIC KEY
+  // Create an account at https://www.emailjs.com/
+  const SERVICE_ID = "YOUR_SERVICE_ID"; 
+  const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+  const PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
     });
+  };
 
-    const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-    const handleChange = (e) => {
-        const { target } = e;
-        const { name, value } = target;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-        setForm({
-            ...form,
-            [name]: value,
+    // If keys are not set, warn the user in console and use simulation
+    if (SERVICE_ID === "YOUR_SERVICE_ID" || PUBLIC_KEY === "YOUR_PUBLIC_KEY") {
+      console.warn("EmailJS keys are missing! Simulating success for now.");
+      // Fallback simulation
+      setTimeout(() => {
+        setLoading(false);
+        setSuccess(true);
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 },
+          zIndex: 999999
         });
-    };
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setSuccess(false), 5000);
+      }, 1000);
+      return;
+    }
 
-    const [success, setSuccess] = useState(false);
+    emailjs
+      .send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Mohan P", // Replace with your name
+          from_email: form.email,
+          to_email: "mohangopippt@gmail.com", // Replace with your email
+          message: form.message,
+        },
+        PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSuccess(true);
+          confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            zIndex: 999999
+          });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setLoading(true);
-
-        // Simulate sending email
-        setTimeout(() => {
-            setLoading(false);
-            setSuccess(true);
-
-            // Trigger confetti
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 },
-                zIndex: 999999
-            });
-
-            setForm({
-                name: "",
-                email: "",
-                message: "",
-            });
-            setTimeout(() => setSuccess(false), 5000);
-        }, 1000);
-    };
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+          setTimeout(() => setSuccess(false), 5000);
+        },
+        (error) => {
+          setLoading(false);
+          console.error(error);
+          alert("Ahh, something went wrong. Please try again.");
+        }
+      );
+  };
 
     return (
         <div

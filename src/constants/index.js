@@ -268,7 +268,7 @@ const projects = [
         source_code_link: "https://github.com/MOHAN-MOORTHI/DocSpot",
     },
     {
-        name: "BOOK-STORE",
+        name: "Book Store",
         description:
             "A full-stack bookstore application featuring a clean interface and robust backend for managing book inventories, user interactions, and sales tracking.",
         tags: [
