@@ -1,103 +1,17 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import confetti from "canvas-confetti";
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-import emailjs from "@emailjs/browser";
 
 // ... existing imports ...
 
 const Contact = () => {
-  const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // Form logic removed as per request
 
-  const [loading, setLoading] = useState(false);
-
-  const SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
-  const TEMPLATE_ID = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
-  const PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
-
-  const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
-  };
-
-  const [success, setSuccess] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // If keys are not set, warn the user in console and use simulation
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      console.warn("EmailJS keys are missing! Simulating success for now.");
-      // Fallback simulation
-      setTimeout(() => {
-        setLoading(false);
-        setSuccess(true);
-        confetti({
-          particleCount: 150,
-          spread: 70,
-          origin: { y: 0.6 },
-          zIndex: 999999
-        });
-        setForm({ name: "", email: "", message: "" });
-        setTimeout(() => setSuccess(false), 5000);
-      }, 1000);
-      return;
-    }
-
-    emailjs
-      .send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Mohan P", // Replace with your name
-          from_email: form.email,
-          to_email: "mohangopippt@gmail.com", // Replace with your email
-          message: form.message,
-        },
-        PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setSuccess(true);
-          confetti({
-            particleCount: 150,
-            spread: 70,
-            origin: { y: 0.6 },
-            zIndex: 999999
-          });
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-          setTimeout(() => setSuccess(false), 5000);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
-  };
 
   return (
     <div
@@ -129,60 +43,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className='mt-4 flex flex-col gap-4'
-        >
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-1 text-sm'>Your Name</span>
-            <input
-              required
-              type='text'
-              name='name'
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your good name?"
-              className='bg-tertiary py-3 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium text-sm'
-            />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-1 text-sm'>Your Email</span>
-            <input
-              required
-              type='email'
-              name='email'
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your web address?"
-              className='bg-tertiary py-3 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium text-sm'
-            />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-1 text-sm'>Your Message</span>
-            <textarea
-              required
-              rows={4}
-              name='message'
-              value={form.message}
-              onChange={handleChange}
-              placeholder='What you want to say?'
-              className='bg-tertiary py-3 px-4 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium text-sm'
-            />
-          </label>
 
-          <button
-            type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary hover:bg-[#1d1836] text-sm'
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
-          {success && (
-            <p className="text-green-400 text-sm font-semibold mt-2">
-              Thank you! I will get back to you soon.
-            </p>
-          )}
-        </form>
       </motion.div>
 
       <motion.div
