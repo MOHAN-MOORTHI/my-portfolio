@@ -13,7 +13,7 @@ export default defineConfig({
           'three-core': ['three'],
           'three-fiber': ['@react-three/fiber'],
           'three-drei': ['@react-three/drei', 'maath'],
-          animations: ['framer-motion', 'react-tilt', 'canvas-confetti'],
+          animations: ['framer-motion', 'react-tilt'],
         },
       },
     },

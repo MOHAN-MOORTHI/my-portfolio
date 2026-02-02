@@ -1,4 +1,4 @@
-import { EarthCanvas, ComputersCanvas, StarsCanvas } from './canvas';
+import { ComputersCanvas } from './canvas';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import About from './About';
@@ -33,7 +33,5 @@ export {
   Preloader,
   SocialSidebar,
   CanvasLoader,
-  EarthCanvas,
-  ComputersCanvas,
-  StarsCanvas
+  ComputersCanvas
 }

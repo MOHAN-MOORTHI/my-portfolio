@@ -12,7 +12,6 @@ import {
   Education,
   Certifications,
   Footer,
-  StarsCanvas,
   ScrollToTop,
   CustomCursor,
   Preloader,
